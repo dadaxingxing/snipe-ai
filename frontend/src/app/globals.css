@@ -1,0 +1,35 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+
+
+:root{
+    --grey-bg: #F6F6F8;
+    --grey-text: #F8FAFC;
+    --grey-stroke: #E2E8F0;
+    --grey: #94A3B8;
+
+    --blue-bg: #135BEC;
+}
+
+
+@theme {
+    --color-grey-bg: var(--grey-bg);
+    --color-bland-text: var(--grey-text);
+    --color-blue-bg: var(--blue-bg);
+    --color-border-grey-stroke: var(--grey-stroke);
+    --color-grey: var(--grey);
+
+    --tracking-1: 0.5px;
+
+}
+
+
+@layer base {
+  * {
+    font-family: inherit;
+  }
+
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  }
+}
