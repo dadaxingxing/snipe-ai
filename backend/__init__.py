@@ -32,3 +32,4 @@ def create_app(test_config=None):
 
 
 # Note to start developing server: 
+# flask --app backend run --debug
