@@ -15,4 +15,17 @@ api.interceptors.request.use((config) => {
     return Promise.reject(error);
 });
 
+api.interceptors.request.use(
+    (response) => response,
+    (error) => {
+        if (error.response && error.response.status === 401) {
+            console.log('Token expired or invalid, user being logged out...');
+            localStorage.removeItem('snipe_token');
+            window.location.href = '/login';
+        }
+        return Promise.reject(error);
+    }
+);
+
+
 export default api;

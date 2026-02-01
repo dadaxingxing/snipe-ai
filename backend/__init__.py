@@ -1,12 +1,14 @@
 from flask import Flask
 from flask_cors import CORS
 from .extensions import jwt, mongo
+from datetime import timedelta
 
 def create_app(test_config=None):
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'abc'
     app.config['MONGO_URI'] = 'mongodb://localhost:27017/snipe'
     app.config['JWT_SECRET_KEY'] = 'abc'
+    app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=24)
 
     mongo.init_app(app)
     jwt.init_app(app)
