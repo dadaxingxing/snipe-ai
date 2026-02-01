@@ -11,7 +11,7 @@ def create_app(test_config=None):
     mongo.init_app(app)
     jwt.init_app(app)
     
-    CORS(app)
+    CORS(app, resources={r"/*": {"origins": "*"}})
 
     # Routes for main website
     from .routes import main_bp
